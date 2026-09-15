@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Job & Interview Assistant</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6fb;margin:0;padding:25px}
+.card{max-width:650px;margin:auto;background:white;padding:25px;border-radius:18px;box-shadow:0 5px 25px #0001}
+h1{margin-top:0}.tag{color:#555}
+textarea{width:100%;box-sizing:border-box;height:100px;padding:12px;border:1px solid #ccc;border-radius:10px}
+button{margin-top:12px;padding:12px 20px;border:0;border-radius:10px;background:#111;color:white;font-size:16px}
+#answer{margin-top:18px;padding:15px;background:#f0f2f7;border-radius:10px;min-height:50px;white-space:pre-line}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>🤖 AI Job & Interview Assistant</h1>
+<p class="tag">Get quick help with job applications, interview questions and customer-service situations.</p>
+<textarea id="q" placeholder="Ask: Tell me about yourself / Why should we hire you? / How to handle an angry customer?"></textarea>
+<button onclick="ask()">Get Answer</button>
+<div id="answer">Your answer will appear here.</div>
+</div>
+<script>
+function ask(){
+ const q=document.getElementById('q').value.toLowerCase(), a=document.getElementById('answer');
+ if(!q.trim()){a.textContent='Please enter a question.';return;}
+ if(q.includes('tell me')||q.includes('introduce')){
+ a.textContent="Sample answer:\nHello, my name is Gulabsha. I have completed my B.Com and have training in travel and customer service. I am a calm, adaptable and good listener. I enjoy helping customers and solving their problems politely. I am looking for an opportunity where I can use my communication and customer-service skills and grow with the company.";
+ } else if(q.includes('why should')||q.includes('hire')){
+ a.textContent="Sample answer:\nYou should hire me because I am responsible, patient and customer-focused. I learn quickly, work well under pressure and always try to solve customer problems politely and professionally.";
+ } else if(q.includes('angry')||q.includes('customer')){
+ a.textContent="Best approach:\n1. Listen without interrupting.\n2. Stay calm and polite.\n3. Understand the exact problem.\n4. Explain the available solution clearly.\n5. Confirm that the customer is satisfied.";
+ } else if(q.includes('strength')){
+ a.textContent="Sample answer:\nMy strengths are adaptability, patience, good listening and a positive attitude. I can stay calm under pressure and focus on finding a practical solution.";
+ } else if(q.includes('weakness')){
+ a.textContent="Sample answer:\nSometimes I spend extra time making sure my work is accurate. I am improving this by prioritising tasks and managing my time better.";
+ } else {
+ a.textContent="Suggested answer:\nThank you for the question. I would first understand the situation, communicate politely, and then choose the most practical solution. I am always willing to learn and improve.";
+ }
+}
+</script>
+</body>
+</html>
